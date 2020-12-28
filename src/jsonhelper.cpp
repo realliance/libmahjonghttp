@@ -48,6 +48,15 @@ auto JSONHelper::parseEvent(Document& d) -> Event {
   };
 }
 
+auto JSONHelper::parseEvent(Value& d) -> Event {
+  return Event {
+    (Event::Type) d["type"].GetUint(),
+    d["player"].GetInt(),
+    (int16_t) d["piece"].GetInt(),
+    d["decision"].GetBool(),
+  };
+}
+
 auto JSONHelper::writeValue(Writer<StringBuffer>& writer, std::string str) -> void {
   writer.String(str.c_str(), static_cast<SizeType>(str.length()));
 }

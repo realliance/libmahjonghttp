@@ -12,6 +12,7 @@
 using rapidjson::StringBuffer;
 using rapidjson::Writer;
 using rapidjson::Document;
+using rapidjson::Value;
 
 using Mahjong::Event;
 using Mahjong::Piece;
@@ -20,6 +21,7 @@ namespace MahjongHttp {
   namespace JSONHelper {
     auto canParseEvent(Document&) -> bool;
     auto parseEvent(Document&) -> Event;
+    auto parseEvent(Value&) -> Event;
 
     // Overload Function Mapping for Writing JSON values
     auto writeValue(Writer<StringBuffer>&, std::string) -> void;
