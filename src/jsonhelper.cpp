@@ -1,4 +1,4 @@
-#include "jsonhelper.h"
+#include "libmahjonghttp/jsonhelper.h"
 
 #include <string>
 
